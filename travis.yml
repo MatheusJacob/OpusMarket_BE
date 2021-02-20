@@ -1,0 +1,19 @@
+sudo: required
+language: node_js
+node_js:
+  - "9"
+services:
+  - docker
+before_install:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+install:
+  - npm install
+script:
+  - npm run test
+  - npm run build
+  - npm run build:docker
+deploy:
+  provider: script
+  script:
+    npm run deploy:dockerhub
+  branch: master
