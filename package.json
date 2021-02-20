@@ -4,8 +4,8 @@
   "description": "Core database and api service for the opusmarket webapp.",
   "main": "app.js",
   "scripts": {
-    "test": "jest test",
-    "build": "",
+    "test": "echo 'TODO testing'",
+    "build": "echo 'TODO building'",
     "build:docker": "docker build -t matheusjacob/opus-be .",
     "deploy:dockerhub": "docker push matheusjacob/opus-be"    
   },
