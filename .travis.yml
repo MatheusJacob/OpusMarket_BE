@@ -13,7 +13,12 @@ script:
   - npm run build
   - npm run build:docker
 deploy:
-  provider: script
-  script: npm run deploy:dockerhub
-  on:
-    branch: main
+  - provider: script
+    script: npm run deploy:dockerhub
+    on:
+      branch: main
+  - provider: heroku
+    api_key: $HEROKU_API_KEY
+    app: opusmarket-be
+    on:
+      branch: main
