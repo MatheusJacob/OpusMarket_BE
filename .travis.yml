@@ -14,5 +14,6 @@ script:
   - npm run build:docker
 deploy:
   provider: script
-  script:
-    npm run deploy:dockerhub
+  script: npm run deploy:dockerhub
+  on:
+    branch: main
